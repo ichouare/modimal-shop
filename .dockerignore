@@ -1,0 +1,88 @@
+############################################################
+# Production-ready .dockerignore for a Next.js (Vercel-style) app
+# Keeps Docker builds fast, lean, and free of development files.
+############################################################
+
+# Dependencies (installed inside Docker, never copied)
+node_modules/
+.pnpm-store/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Next.js build outputs (always generated during `next build`)
+.next/
+out/
+dist/
+build/
+.vercel/
+
+
+# Local development and editor files
+.git/
+.gitignore
+.vscode/
+
+
+
+# Environment variables (only commit template files)
+.env
+.env*.local
+.env.development
+.env.test
+.env.production.local
+
+# Docker configuration files (not needed inside build context)
+Dockerfile*
+.dockerignore
+compose.yaml
+compose.yml
+docker-compose*.yaml
+docker-compose*.yml
+
+
+
+
+
+# TypeScript build metadata
+*.tsbuildinfo
+
+# Sensitive or unnecessary configuration files
+.prettierrc*
+prettier.config.*
+.eslintrc*
+eslint.config.*
+
+# OS-specific junk
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# AI/ML tool metadata and configs
+.cursor/
+.cursorrules
+.copilot/
+.copilotignore
+.github/copilot/
+.gemini/
+.anthropic/
+.kiro
+.claude
+AGENTS.md
+CLAUDE.md
+.agents/
+
+# AI-generated temp files
+*.aider*
+*.copilot*
+*.chatgpt*
+*.claude*
+*.gemini*
+*.openai*
+*.anthropic*

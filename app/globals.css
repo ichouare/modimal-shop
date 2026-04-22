@@ -46,7 +46,64 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+
+
+  --color-primary: #748C70;
+  --color-black:  #0C0C0C;
+  --color-white: #FFFFFF;
+
+  --color-primary-25: #F0F2EF;
+  --color-primary-50: #D1D9CF;
+  --color-primary-100: #B2BFAF;
+  --color-primary-200: #A2B39F;
+  --color-primary-300: #93A690;
+  --color-primary-400: #839980;
+  --color-primary-600: #5A6D57;
+  --color-primary-700: #404E3E;
+  --color-primary-750: #343E32;
+  --color-primary-800: #272F25;
+   --color-primary-900: #0D100C;
+
+   --color-neutral-bg: #FAF9F5;
+   --color-gray-50: #DFDFDF;
+   --color-gray-100: #EDEDED;
+   --color-gray-200: #F9F9F9;
+   --color-gray-300: #CBCBCB;
+   --color-gray-400: #ADADAD;
+   --color-gray-500: #868686;
+   --color-gray-600: #606060;
+   --color-gray-700: #404040;
+   --color-gray-800: #202020;
+
+   --color-warning-bg: #F7E4C9;
+   --color-warning-light: #ECBB77;
+   --color-warning: #E09126;
+   --color-error-bg: #FFF2F2;
+   --color-error-light: #ED2E2E;
+   --color-error: #C30000;
+   --color-success-bg: #F3FDFA;
+   --color-sucess-light : #00BA88;
+   --color-success: #00966D;
+
+
+  --breakpoint-sm: 500px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1224px;
+  --breakpoint-xl: 1224px;
+  --breakpoint-2xl: 1224px; /* custom */
+
+
+
+
+
+
+
+
+
 }
+
+
+
 
 :root {
   --background: oklch(1 0 0);
@@ -122,9 +179,107 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-white text-foreground;
   }
-  html {
-    @apply font-sans;
+
+  .display1{
+    @apply font-bold text-[64px] tracking-[140%]
   }
+
+  .display2{
+    @apply font-bold text-[56px] tracking-[120%]
+  }
+
+  .bodyXL{
+     @apply font-normal text-[20px]
+}
+  .bodyLG{
+     @apply font-normal text-[18px]
+}
+  .bodyMD{
+     @apply font-normal text-[16px]
+}
+  .bodySM{
+     @apply font-normal text-[14px]
+}
+  .bodyXS{
+     @apply font-normal text-[12px]
+}
+.captionLGP{
+  @apply font-semibold text-[14px]
+
+}
+.captionMD{
+   @apply font-normal text-[12px]
+}
+.captionSM{
+    @apply font-semibold text-[10px]
+}
+
+.buttonLG{
+    @apply font-normal text-[16px]
+}
+.buttonSM{
+    @apply font-normal text-[14px]
+}
+.overlineLG{
+  @apply font-normal text-[18px]
+}
+.overlineSM{
+  @apply font-normal text-[14px]
+}
+}
+
+
+@layer components {
+  h1{
+    @apply font-bold text-[44px]
+  }
+
+  h2{
+    @apply font-bold text-[40px]
+  }
+
+  h3{
+    @apply font-semibold text-[32px]
+  }
+
+  h4{
+    @apply font-semibold text-[12px] lg:font-bold lg:text-[24px]
+  }
+
+  h5{
+    @apply font-bold text-[20px]
+  }
+
+  h6{
+    @apply font-bold text-[16px]
+  }
+  ul{
+    @apply list-none flex items-center justify-center
+  }
+
+  .hero{
+    background-image: url("/hero.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 110% 105%;
+  }
+
+  .Sustainability{
+    background-image: url("/Sustainability.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 105%;
+  }
+
+  @media (max-width:500px) {
+ .hero{
+    background-image: url("/hero.jpg");
+    background-position: -13rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  }
+
 }
