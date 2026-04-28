@@ -2,14 +2,12 @@
 "use Client"
 
 
-import { LoginSchema, TLoginSchema } from '@/types/loginSchema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import {Input} from './ui/input'
 import { Button } from './ui/button'
 import Link from 'next/link'
-import Image from 'next/image'
 import { SignUpSchema, TSignUpSchema } from '@/types/SignUpSchema'
 import { useLogin } from '@/hooks/useLogin'
 import CostumizeDialog from './costumizeDialog'
@@ -20,11 +18,12 @@ import MediaAuth from './mediaAuth'
 type Tprops = {
   setAlreadyHave : (str: boolean) => void
 }
+
 function SignUpForm({
 setAlreadyHave
 }: Tprops) {
 
-    const {
+  const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },

@@ -1,5 +1,8 @@
+"use client"
 import { Circle, Heart } from 'lucide-react'
 import Image from 'next/image'
+import { Button } from './ui/button'
+import { useRouter } from 'next/navigation'
 
 
 type Tprops = {
@@ -12,11 +15,14 @@ type Tprops = {
 }
 
 function Product({image, title, description, colors, price}: Tprops) {
+  const router = useRouter()
   return (
-    <article className="w-[152px] md:w-[450px]  flex flex-col gap-[10px]  ">
+    <article className="w-[152px] md:w-[420px]   flex flex-col gap-[10px]  " onClick={()=> router.push("/Product/fsadfjdksafjads")}>
       <div className="w-full h-[213px] lg:h-[436px] relative ">
         <Image src={image} alt="prodcut" className="w-full h-full object-cover" fill  />
-        <Heart className="absolute right-6 top-4 text-black" fill="#FFF"  />
+        <Button title="favorite" size="icon" variant="outline" className="absolute cursor-pointer  right-6 top-4 bg-transparent p-0 border-0 text-black">
+        <Heart  size={40} fill="#FFF" className="size-6"  />
+        </Button>
       </div>
       <div className="text-black flex ">
           <div className="w-full flex flex-col  gap-[10px]">

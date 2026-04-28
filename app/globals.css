@@ -228,10 +228,20 @@
 .overlineSM{
   @apply font-normal text-[14px]
 }
+.noScrollbar {
+
+  scrollbar-width: none;
+
+}
 }
 
 
 @layer components {
+
+  html{
+    @apply scroll-smooth
+  }
+
   h1{
     @apply font-bold text-[44px]
   }

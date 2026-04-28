@@ -1,12 +1,11 @@
 "use client"
 import { LoginSchema, TLoginSchema } from '@/types/loginSchema'
 import { zodResolver } from '@hookform/resolvers/zod'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import {Input} from './ui/input'
 import { Button } from './ui/button'
 import Link from 'next/link'
-import Image from 'next/image'
 import { useSignIn } from '@/hooks/useSignIn'
 import CostumizeDialog from './costumizeDialog'
 import MediaAuth from './mediaAuth'
@@ -44,7 +43,7 @@ function SignInForm({
           reset()
         },
         onError: (error) => {
-          console.log("here")
+          console.log("here", error)
         }
       })
 

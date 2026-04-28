@@ -4,9 +4,8 @@ import BestSeller from "@/components/BestSeller"
 import Collections from "@/components/Collections"
 import Followus from "@/components/Followus"
 import Hero from "@/components/hero"
-import Product from "@/components/product"
 import Sustainability from "@/components/Sustainability"
-import { useUser } from "@auth0/nextjs-auth0"
+
 
 
 function LandingPage() {

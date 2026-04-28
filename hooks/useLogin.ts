@@ -1,4 +1,3 @@
-import { TLoginSchema } from "@/types/loginSchema";
 import { TSignUpSchema } from "@/types/SignUpSchema";
 import { useMutation } from "@tanstack/react-query";
 import instanceAPI from "@/axios/instance";

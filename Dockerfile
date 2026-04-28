@@ -1,31 +1,22 @@
-# image to print in console "hello capitain"
+FROM node:25-alpine AS base
+
+WORKDIR  /app
 
 
-ARG NODE_VERSION=24.13.0-slim
+COPY package*.json ./
 
-FROM  node:${NODE_VERSION} AS base
+RUN npm i
 
-
-FROM base AS builder
-
-
-WORKDIR /app
-
-COPY package.json package-lock.json .
-
-
-ENV NODE_ENV=production
-
-
-RUN npm ci
 
 COPY . .
 
-RUN npm start build
+EXPOSE 3000
 
-FROM base as runner
+CMD ["npm", "run", "dev"]
 
-WORKDIR /app
+
+
+
 
 
 

@@ -22,7 +22,7 @@ export async function proxy(request: Request) {
 
         // Send user data to Express backend
         const res =  await axios.post(
-          `${process.env.BACKEND_URL}/api/v1/auth0`,
+          `${process.env.NEXT_PUBLIC_API_URL}/api/v1/auth0`,
           {
             firstName: session?.user?.given_name,
             secondName: session?.user?.family_name,
