@@ -10,7 +10,10 @@ type Tprops = {
   description: string;
   price: string;
   image: string;
-  colors: string[];
+  currency: string;
+  variants: {
+    [key: string]: string;
+  }[];
   select?: false;
 };
 
@@ -18,12 +21,14 @@ function Product({
   image,
   title,
   description,
-  colors,
   price,
+  variants,
+  currency,
   select = false,
 }: Tprops) {
   const router = useRouter();
-  const [isSelected, setIsSelected] = useState(select);
+  const [isSelected, setIsSelected] = useState<boolean>(select);
+  const colors = variants?.map((item) => item.colors);
   return (
     <article
       className="w-[152px] md:w-full md:max-w-[420px]   flex flex-col gap-[10px]  "
@@ -40,9 +45,14 @@ function Product({
           title="favorite"
           size="icon"
           variant="outline"
+          onClick={(e) => {
+            e.stopPropagation();
+            console.log("add this product to withlist");
+            setIsSelected((prev) => !prev);
+          }}
           className="absolute cursor-pointer  right-6 top-4 bg-transparent p-0 border-0 text-black"
         >
-          {isSelected ? (
+          {!isSelected ? (
             <Heart size={40} fill="#FFF" className="size-6" />
           ) : (
             <Heart
@@ -58,7 +68,10 @@ function Product({
           <h6>{title}</h6>
           <div className="flex items-center justify-between">
             <p className="">{description}</p>
-            <h6>{price}$</h6>
+            <h6>
+              {price}
+              <span className="black mx-1">{currency}</span>
+            </h6>
           </div>
           <ul className="flex items-center justify-start gap-[10px]">
             {colors?.map((item, index) => (

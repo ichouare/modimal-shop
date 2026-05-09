@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 type TImage = {
   url: string;
@@ -36,9 +37,9 @@ function HoverIem({ content }: TProps) {
                 key={itemIndex}
               >
                 {item.map((subItem, idx) => (
-                  <li key={idx} className="bodyLG text-gray-700">
-                    {subItem}
-                  </li>
+                  <Link key={idx} href={`/${subItem}`}>
+                    <li className="bodyLG text-gray-700">{subItem}</li>
+                  </Link>
                 ))}
               </ul>
             );

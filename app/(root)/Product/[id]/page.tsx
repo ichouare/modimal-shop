@@ -29,7 +29,7 @@ function DetailProduct() {
   return (
     <section className="min-h-screen h-auto w-full flex flex-col items-center justify-start ">
       <section className="h-full container">
-        <div className="grid grid-cols-2   gap-8">
+        <div className="grid grid-cols-2   pt-8 gap-8">
           <div className="w-full h-[512px] grid grid-cols-[150px_1fr] ">
             <div className=" flex flex-col items-start  overflow-x-hidden overflow-y-scroll">
               {image.map((item, index) => (

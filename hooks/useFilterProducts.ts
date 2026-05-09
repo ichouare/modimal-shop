@@ -10,7 +10,7 @@ async function getFillterProducts(payload: Tpayload)
 
   console.log(payload)
   try{
-    const res = await instanceAPI.get("/filter", {
+    const res = await instanceAPI.get("/product/filter", {
       params: payload,
     });
     return res

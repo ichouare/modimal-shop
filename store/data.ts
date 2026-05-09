@@ -59,22 +59,22 @@ export const FilteringItem = [
     type: "sort",
     title: "Sort By",
     items: [
-      { label: "Newest", value: "newest" },
-      { label: "Price: Low to High", value: "price_asc" },
-      { label: "Price: High to Low", value: "price_desc" },
-      { label: "Best Selling", value: "best_selling" },
-      { label: "Top Rated", value: "top_rated" }
+      { label: "Newest", value: { createdAt: 1 } },
+      { label: "Price: Low to High", value:{ price: 1 } },
+      { label: "Price: High to Low", value: { price: -1 }  },
+      // { label: "Best Selling", value: "best_selling" },
+      // { label: "Top Rated", value: "top_rated" }
     ]
   },
   {
     type: "size",
     title: "Size",
     items: [
-      { label: "XS / US (0-4)", value: "xs" },
-      { label: "S / US (4-6)", value: "s" },
-      { label: "M / US (6-8)", value: "m" },
-      { label: "L / US (8-10)", value: "l" },
-      { label: "XL / US (10-12)", value: "xl" }
+      { label: "XS / US (0-4)", value: "XS" },
+      { label: "S / US (4-6)", value: "S" },
+      { label: "M / US (6-8)", value: "M" },
+      { label: "L / US (8-10)", value: "L" },
+      { label: "XL / US (10-12)", value: "XL" }
     ]
   },
   {
